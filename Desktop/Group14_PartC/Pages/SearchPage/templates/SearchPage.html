@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('SearchPage.static', filename='CSS/SearchPage.css') }}">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+{% endblock %}
+
+{% block title %}Search Page{% endblock %}
+
+{% block main_block %}
+    <!-- Main page section -->
+    <main>
+        <div class="container">
+            <div class="head">
+                <h2 id="h2">חיפוש דירה</h2>
+            </div>
+            <div class="fields">
+                <form id="searchingform" action="/search" method="post">
+                    <!--Searching details-->
+                    <div class="fields-pad">
+                        <input id="place" type="search" placeholder="מיקום">
+                    </div>
+                    <div class="fields-pad">
+                        <input id="Parking" type="number" min="0" place placeholder="מקומות חנייה">
+                    </div>
+
+                    <div class="fields-pad">
+                        <input id="Guests" type="number" min="0" placeholder="מספר אורחים">
+                    </div>
+                    <!--For check box div-->
+                    <div class="container" id="ckbox">
+                        <div >
+                            <input id="Kosher" type="checkbox">
+                            <label>דירה כשרה</label>
+                        </div>
+
+                        <div >
+                            <input id="animal" type="checkbox">
+                            <label> בע''ח</label>
+                        </div>
+
+                        <div >
+                            <input id="Elevator" type="checkbox">
+                            <label>מעלית</label>
+                        </div>
+                    </div>
+                    <!--Calenders-->
+                    <div class="calendar-container">
+                        <div id="startDatePicker" class="datepicker">תאריך כניסה</div>
+                        <input type="hidden" id="startDate">
+                        <div id="endDatePicker" class="datepicker">תאריך יציאה</div>
+                        <input type="hidden" id="endDate">
+                    </div>
+                    <div class="submit-btn">
+                        <button type="submit" id="searchingbutton">חיפוש</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
+
+{% block JS %}
+    {{ super() }}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ url_for('SearchPage.static', filename='JS/SearchingPage.js') }}"></script>
+{% endblock %}

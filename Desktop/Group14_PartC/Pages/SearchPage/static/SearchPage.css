@@ -1,0 +1,179 @@
+
+/* Base setup for full height and no margin */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Search input and button styling */
+.search {
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    border-radius: 9999px 0 0 9999px;
+    border-right: none;
+    margin-left: 20px;
+}
+.search-top{
+    display: flex;
+    flex-direction: row;
+}
+body, button, input, select, textarea, th, td, label, a, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-color: #cde9f7;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+    padding: 1rem 0;
+}
+
+/* Navigation styling */
+nav {
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
+    color: #4a5568;
+    margin-right: 2rem;
+    text-decoration: none;
+}
+nav a:hover {
+    color: #1a202c;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+h2 {
+    color: #333;
+    text-align: center;
+    margin: auto;
+}
+.head {
+    padding: 10px;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-content: center;
+}
+main{
+    flex: 1;
+    background-color: #f7fafc;
+}
+
+.form {
+    background: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.submit-btn{
+    margin-top:10px;
+}
+
+.calendar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin-top: 2rem;
+}
+.datepicker {
+    padding: 1rem;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.datepicker:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+.fields{
+    text-align: center;
+    margin-top: 10px;
+    color: #1a202c;
+    padding: 10px;
+    font-size: 18px;
+}
+.fields-pad{
+    padding: 10px;
+    background-color: #e2e8f0;
+}
+.search-button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 0 9999px 9999px 0;
+    cursor: pointer;
+    border-left: none;
+}
+
+
+.search-button:hover {
+    background-color: #f0f0f0;
+}
+
+#searchingbutton {
+    width: 100px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    background: blue;
+    transition: transform 0.3s ease;
+    border-radius: 9999px;
+}
+
+#searchingbutton:hover {
+    background-color: #2c5282;
+}
+
+#searchingform input {
+    width: 40%;
+    margin: 3px;
+    padding: 5px;
+    border: 1px solid #a1a6ad;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#ckbox {
+    background: #e2e8f0;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+}
+
+#ckbox div {
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] + label {
+    margin-right: 0.5rem;
+}
+
+::placeholder {
+    text-align: center;
+    color: #1a202c;
+}
+button:hover {
+    background-color: white;
+    cursor: pointer;
+}
+.flag{
+     float: left;
+
+}

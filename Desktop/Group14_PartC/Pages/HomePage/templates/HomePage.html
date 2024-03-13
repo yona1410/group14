@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('HomePage.static', filename='CSS/HomePage.css') }}">
+{% endblock %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block main_block %}
+    <main>
+        <div class="main-container">
+            <div class="form-section">
+                <h3>כניסה לאיזור האישי</h3>
+                <!--Log in form with option for registration-->
+                <form id="myform" action="/submit" method="post">
+                    <div>
+                        <label for="id">תעודת זהות</label>
+                        <input type="text" id="id"  name="username" maxlength="9">
+                    </div>
+                    <div>
+                        <label for="password">סיסמא</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="button" id="login-button" name="action" value="login">התחברות</button> <!--Log in btn-->
+                        <button type="submit" class="button" id="register-button" name="action" value="register">הרשמה</button> <!--Direct to registration page btn-->
+
+                    </div>
+                </form>
+                <!--For alert msg-->
+                <div class="msg"></div>
+            </div>
+            <!-- Left side with banner and text -->
+            <div class="text-section">
+                <h2>ביחד ננצח</h2>
+                <p>אתר זה נועד לתת מענה למפוני הישובים בגבול הצפון והדרום במדינת ישראל בעקבות מלחמת "חרבות ברזל" בכל הקשור בנושאי לינה, שהייה ופתרונות דיור זמניים.</p>
+
+            </div>
+
+            <div class="image-section">
+                <img src="{{ url_for('HomePage.static', filename='pictures/israel-flag-beach.jpg') }}" alt="Israeli Flag">
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block JS %}
+    {{ super() }}
+    <script src="{{ url_for('HomePage.static', filename='JS/HomePage.js') }}"></script>
+{% endblock %}

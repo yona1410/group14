@@ -1,0 +1,87 @@
+ {% extends 'base.html' %}
+
+ {% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('Registration.static', filename='CSS/Registration.css') }}">
+ {% endblock %}
+
+
+ {% block title %}Registration Page{% endblock %}
+
+ {% block main_block %}
+    <main>
+        <div class="container" id="regBox">
+            <!-- center with banner and text -->
+            <div class="header">
+                <h2 id="h2">דף הרשמה</h2>
+            </div>
+
+            <div class="flag">
+                <img src="{{ url_for('Registration.static', filename='pictures/israel_beach_flag.jpeg') }}" height="350", width="300"
+                     alt="Israel Flag and Beach" class="flag">
+            </div>
+            <!-- Right side with form -->
+            <div class="form">
+                <form id="RegForm" action="/register" method="post">
+                    <!-- Form inputs -->
+                    <div class="container">
+                        <select id="gender" name="gender">
+                             <option value="תואר" disabled selected>תואר</option>
+                             <option value="מר">מר</option>
+                             <option value="גברת">גברת</option>
+                             <option value="אחר">אחר</option>
+                        </select>
+                    </div>
+                    <!-- ID Container -->
+                    <div class="container">
+                        <label for="idz" class="container"></label>
+                        <input type="text" id="idz" placeholder="תעודת זהות" class="w-full px-3 py-2 border rounded">
+                    </div>
+                    <!-- First name Container -->
+                    <div class="container">
+                        <label for="firstname" class="container"></label>
+                        <input type="text" id="firstname" placeholder="שם פרטי" class="w-full px-3 py-2 border rounded">
+                    </div>
+                    <!-- Surname Container -->
+                    <div class="container">
+                        <label for="surnname" class="container"></label>
+                        <input type="text" id="surnname" placeholder="שם משפחה" class="w-full px-3 py-2 border rounded">
+                    </div>
+                    <!-- City Container -->
+                    <div class="container">
+                        <label for="city" class="container"></label>
+                        <input type="text" id="city" placeholder=" עיר מקור" class="w-full px-3 py-2 border rounded">
+                    </div>
+                    <!-- Email Container -->
+                    <div class="container">
+                        <label for="email" class="container"></label>
+                        <input type="email" id="email" placeholder="כתובת אימייל" class="w-full px-3 py-2 border rounded">
+                    </div>
+                    <!-- Phone Container -->
+                    <div class="container">
+                        <label for="phone" class="container"></label>
+                        <input type="text" id="phone" placeholder="מספר טלפון" class="w-full px-3 py-2 border rounded">
+                    </div>
+                    <!-- Password Container -->
+                    <div class="container">
+                        <label for="password" class="container"></label>
+                        <input type="password" id="password" placeholder="סיסמה" class="w-full px-3 py-2 border rounded">
+                    </div>
+
+                    <!-- Submit button -->
+                    <div class="submit-btn">
+                        <button type="submit" id="registrationButton" >הרשמה</button>
+                    </div>
+                </form>
+                <!-- Form errors display -->
+                <div id="formErrors"></div>
+            </div>
+        </div>
+    </main>
+
+    {% endblock %}
+
+    {% block JS %}
+        {{ super() }}
+        <script src="{{ url_for('Registration.static', filename='JS/Registration.js') }}"></script>
+    {% endblock %}

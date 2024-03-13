@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('SearchResults.static', filename='CSS/SearchResults.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+{% endblock %}
+
+{% block title %}Search Results Page{% endblock %}
+
+{% block main_block %}
+    <!-- Apartements search results displayed as card list -->
+    <section id="product">
+        <div class="product-info">
+            <!--Info details about search inputs-->
+            <h3 class="product-title">
+                תוצאות חיפוש עבור:
+            </h3>
+            <div class="search-tags">
+                <span class="search-tag">{{ query_params.city }}</span>
+                <span class="search-tag">{{ startdate }} - {{ enddate }}</span>
+            </div>
+        </div>
+        <div class="container">
+            {% for apartment in apartments %}
+            <div class="product-card">
+                <img src="{{ url_for('SearchResults.static', filename=apartment.random_picture)}}" alt="" class="product-img">
+                <div class="card-info">
+                    <div class="card-info-content">
+                        <img src="{{ url_for('SearchResults.static', filename='pictures/204897-200.png') }}" alt="">
+                        <p class="date-span">{{ startdate }} - {{ enddate }}</p>
+                    </div>
+                    <div class="card-info-content">
+                        <div class="content">
+                            <img src="{{ url_for('SearchResults.static',filename='pictures/7118098.png') }}" alt="">
+                            <p>{{ apartment.rooms }} חדרים</p>
+                        </div>
+                        <div class="content">
+                            <img src="{{ url_for('SearchResults.static',filename='pictures/size.svg')}}" alt="">
+                            <p>{{ apartment.size }} מ"ר</p>
+                        </div>
+                        <div class="content">
+                            <img src="{{ url_for('SearchResults.static',filename='pictures/3549401-200.png')}}" alt="">
+                            <p>{{ apartment.parking }}</p>
+                        </div>
+                    </div>
+                    <div class="location-name">
+                        <img src="{{ url_for('SearchResults.static',filename='pictures/location.svg')}}" alt="">
+                        <p>{{ apartment.address }} {{ apartment.city }}</p>
+                        <a href="#" class="booking-btn" data-apartment-id="{{ apartment.id }}" data-start-date="{{ startdate }}" data-end-date="{{ enddate }}">הזמן עכשיו</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!--Map panel-->
+    <div class="map-container">
+        <h3 class="map-title">Map View</h3>
+        <div id="map" class="map"></div>
+    </div>
+    </section>
+
+{% endblock %}
+
+
+    {% block JS %}
+    {{ super() }}
+        <script src="{{ url_for('SearchResults.static', filename='JS/SearchResults.js') }}"></script>
+    {% endblock %}

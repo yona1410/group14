@@ -1,0 +1,97 @@
+/* Import external fonts for use throughout the site */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap');
+
+/* Base setup for full height and no margin */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Logo specific styles */
+.logo {
+    font-size: 24px; 
+    font-weight: bold; 
+}
+
+/* Base font family for main elements, ensuring consistency */
+body, button, input, select, textarea, th, td, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Heading styles with color and margin adjustments */
+h1, h2, h3, h4, h5, h6 { 
+    color: #333;
+    margin: 20px 300px 20px 0px;
+}
+
+/* Header styling with background and shadow */
+header {
+    background-color: #cde9f7; 
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.05);
+    padding: 1rem 0;
+}
+
+/* Search input and button styling */
+.search {
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    border-radius: 9999px 0 0 9999px; 
+    border-right: none; 
+    margin-left: 20px;
+}
+
+.search-top {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-button {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 0 9999px 9999px 0;
+    cursor: pointer;
+    border-left: none; 
+}
+
+.search-button:hover {
+    background-color: #f0f0f0; 
+}
+
+/* Navigation styling */
+nav {
+    max-width: 100%; 
+    margin: auto; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+nav a {
+    color: #4a5568; 
+    margin-right: 2rem; 
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #1a202c; 
+}
+
+
+footer p{
+    color: whitesmoke;
+}
+
+/* Footer configuration for consistent styling */
+footer {
+    background: #0c243c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: fixed; Removed this line */
+    /* bottom: 0; Removed this line */
+    /* left: 0; Removed this line */
+    width: 100%;
+    height: 60px;
+    margin-top: 120px;
+}

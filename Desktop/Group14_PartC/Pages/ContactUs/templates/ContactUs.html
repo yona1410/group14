@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('ContactUs.static', filename='CSS/ContactUs.css') }}">
+{% endblock %}
+
+{% block title %}Contact Us Page{% endblock %}
+
+{% block main_block %}
+
+    <main>
+        <div class="container">
+            <!-- center with banner and text -->
+            <div class="header">
+                <h2 id="h2">דף יצירת קשר</h2>
+            </div>
+
+            <div class="flag">
+                <img src="{{ url_for('ContactUs.static', filename='pictures/togetherwin.png') }}" alt="Together winning" class="flag">
+            </div>
+            <div class="form">
+                <div id="RegForm">
+                    <!-- General information-->
+                <p class="container">ליצירת קשר דרך אימייל:</p>
+                <p class="container">reznyo@post.bgu.ac.il</p>
+                <p class="container">marhad@post.bgu.ac.il</p>
+                <p class="container">ליצירת קשר עם מוקד: 050-4082919</p>
+                <p class="container">בעת שליחת בקשה במייל או יצירת קשר עם המוקד אנא הזדהו עם מספר תעודת הזהות.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+
